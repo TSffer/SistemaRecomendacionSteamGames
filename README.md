@@ -64,6 +64,3 @@ El sistema utiliza un enfoque vectorial para las recomendaciones:
 * **Scikit-learn:** Cálculo de matrices de distancia (Linear Kernel).
 * **Steam API:** Fuente de datos para el proceso de ETL.
 * **Matplotlib & Seaborn:** Análisis exploratorio de datos (EDA).
-
----
-*Desarrollado por Luis Fernando Ttito Surco - 2025*
