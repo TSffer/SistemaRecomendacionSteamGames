@@ -1,6 +1,6 @@
 # Sistema de recomendacion Steam:
 
-Se desarrolló un sistema de recomendación de videojuegos basado en contenido (*Content-Based Filtering*) usando el conjunto de datos de la plataforma Steam. Este motor utiliza **Embeddings** para comprender el contexto narrativo y temático de los juegos.
+Se desarrolló un sistema de recomendación de videojuegos basado en contenido (*Content-Based Filtering*) usando el conjunto de datos de la plataforma Steam. Este motor utiliza **Embeddings** para comprender el contexto y temático de los juegos.
 
 ## El Dataset y Proceso de Enriquecimiento
 
@@ -33,17 +33,28 @@ El proyecto se estructura en torno a dos conjuntos de datos principales procesad
 Contiene las interacciones explícitas de los usuarios.
 * **`user_id`**: Identificador único del usuario.
 * **`item_id`**: Identificador único del juego (Steam App ID).
+* **`review_text`**: Texto libre con la opinión del usuario.
 * **`recommend`**: Variable binaria (Target). `True` (1) si el usuario recomienda el juego, `False` (0) si no.
-* **`review_text`**: Texto libre con la opinión del usuario (utilizado para análisis exploratorio).
-* **`rating`**: Variable derivada donde `recommend=True` equivale a 1 (Feedback Implícito Positivo).
 
 ### 2. Dataset: `steam_games_enriched` (Contenido Enriquecido)
 Información descriptiva utilizada para generar los vectores (Embeddings).
-* **`app_name`**: Título del videojuego.
+* **`publisher`**: Empresa que publicar el videojuego.
 * **`genres`**: Lista de géneros oficiales (ej. *Action, RPG, Indie*).
-* **`tags`**: Etiquetas generadas por la comunidad de Steam. Son cruciales para capturar sub-géneros y temáticas (ej. *Cyberpunk, Difficult, Atmospheric*).
+* **`app_name`**: Nombre del videojuego.
+* **`title`**: Título del videojuego.
+* **`url`**: URL a la pagina del juego.
+* **`release_date`**: Fecha de lanzamiento del juego.
+* **`tags`**: Etiquetas generadas por usuarios.
+* **`discount_price`**: Precio del juego con descuentos.
+* **`reviews_url`**: URL donde se encuentran las reseñas.
 * **`specs`**: Especificaciones técnicas (ej. *Single-player, Multi-player*).
-* **`detailed_description`**: Descripción narrativa extensa del juego, lore y mecánicas. 
+* **`price`**: Precio base sin descuentos.
+* **`early_access`**: Acceso anticipado
+* **`id`**: Identificador único del juego en Steam (AppID).
+* **`developer`**: Responsable del desarrollo del videojuego.
+* **`sentiment`**: Clasificación del sentimiento general de reseñas en Steam
+* **`metascore`**: Críticos profesionales.
+* **`detailed_description`**: Descripción completa del juego proporcionada por Steam.
 * **`short_description`**: Resumen comercial del juego.
 
 
